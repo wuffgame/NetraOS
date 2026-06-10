@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
-    <body style="background-color: #d7dade">
-        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border: solid; width: 800px; padding: 30px; border-radius: 25px">
+    <body style="background-image: url(img/background/941898.jpg); background-size: cover">
+        <div style="position: absolute; top: 0%; left: 0%; right: 0%; width: 100%; display: flex; background-color: rgba(0, 0, 0, 0.5); color: #fff; justify-content: space-between;">
+            <p style="color: #333333; border: solid; margin-left: 10px; font-family: Impact, fantasy; font-size: 16px; font-weight: 100; letter-spacing: 1px; background-color: rgba(215, 218, 222, 0.65); border-radius: 12px; padding: 7px;"><b>NetraOS</b></p>
+            <p id="timeElement" style="color: #333333; border: solid; margin-right: 10px; font-family: Luminari, fantasy; font-size: 16px; background-color: rgba(215, 218, 222, 0.65); border-radius: 12px; padding: 7px">10.06.2026 20:58</p>
+        </div>
+        <div style="background-color: #d7dade; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border: solid; width: 800px; padding: 30px; border-radius: 25px">
             <h1 style="font-size: 38px; color: #560591"><b>Welcome to NetraOS!!!</b></h1>
             <h3 style="font-size: 30px; color: #560591">Introduction</h3>
             <div style="display: flex; align-items: center; gap: 15px;">
@@ -11,5 +15,13 @@
             <p style="color: #560591"><b>Where can you find me?</b></p>
             <a href="https://github.com/wuffgame"><img style="width: 32px; height: 32px" src="img/icons/github.png"></a>
         </div>
+        <script>
+            function updateTime() {
+                var currentTime = new Date().toLocaleString();
+                var timeText = document.querySelector("#timeElement");
+                timeText.innerHTML = currentTime;
+            }
+            setInterval(updateTime, 1000);
+        </script>
     </body>
 </html>
