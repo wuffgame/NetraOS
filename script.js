@@ -1,3 +1,5 @@
+var biggestIndex = 1;
+
 function updateTime() {
                 var currentTime = new Date().toLocaleString();
                 var timeText = document.querySelector("#timeElement");
@@ -69,7 +71,9 @@ function closeWindow(element) {
 }
 
 function openWindow(element) {
-    element.style.display = "block"
+    element.style.display = "block";
+    biggestIndex++;  // Increment biggestIndex by 1
+    element.style.zIndex = biggestIndex;
 }
 welcomeScreenClose.addEventListener("click", function() {
     closeWindow(welcomeScreen);
@@ -78,3 +82,17 @@ welcomeScreenClose.addEventListener("click", function() {
 welcomeScreenOpen.addEventListener("click", function() {
     openWindow(welcomeScreen);
 });
+function handleWindowTap(element) {
+    biggestIndex++;  // Increment biggestIndex by 1
+    element.style.zIndex = biggestIndex;
+}
+function addWindowTapHandling(element) {
+    element.addEventListener("mousedown", () =>
+        handleWindowTap(element)
+    )
+}
+function initializeWindow(elementName) {
+    var screen = document.querySelector("#" + elementName)
+    addWindowTapHandling(screen)
+    dragElement(screen)
+}
