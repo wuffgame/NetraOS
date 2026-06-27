@@ -1,0 +1,72 @@
+/* Window */
+.window {
+    background-color: #d7dade;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: solid;
+    width: 800px;
+    padding: 30px;
+    border-radius: 25px;
+}
+
+.window-header {
+    display: flex;
+    align-items: center;
+    cursor: move;
+    margin-top: 3px;
+}
+
+.window-title {
+    font-size: 15px;
+    color: #560591;
+}
+
+.window-text {
+    color: #560591;
+}
+
+.closebut {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+/* Topbar */
+.topbar-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.topbar {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    justify-content: space-between;
+}
+
+.dock {
+    display: flex;
+    padding: 4px 10px;
+}
+
+/* Reusable pill style for topbar/dock items */
+.bar-item {
+    color: #333333;
+    border: solid;
+    font-size: 16px;
+    background-color: rgba(215, 218, 222, 0.65);
+    border-radius: 12px;
+    padding: 7px;
+}
+
+.dock-item {
+    cursor: pointer;
+    margin: 0;
+}
