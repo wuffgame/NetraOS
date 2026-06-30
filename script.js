@@ -96,3 +96,75 @@ function initializeWindow(elementName) {
     addWindowTapHandling(screen)
     dragElement(screen)
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    var calculatorScreen = document.querySelector("#calculator");
+    var calculatorScreenClose = document.querySelector("#calculatorclose");
+    var calculatorScreenOpen = document.querySelector("#calculatoropen");
+    var calcDisplay = document.querySelector("#calcDisplay");
+    var calcButtons = document.querySelectorAll(".calc-btn");
+    var calcExpression = "";
+
+    if (calculatorScreen) {
+        initializeWindow("calculator");
+    }
+
+    if (calculatorScreenClose && calculatorScreen) {
+        calculatorScreenClose.addEventListener("click", function () {
+            closeWindow(calculatorScreen);
+        });
+    }
+
+    if (calculatorScreenOpen && calculatorScreen) {
+        calculatorScreenOpen.addEventListener("click", function () {
+            openWindow(calculatorScreen);
+        });
+    }
+
+    function updateCalcDisplay(value) {
+        if (calcDisplay) {
+            calcDisplay.value = value || "0";
+        }
+    }
+
+    function clearCalculator() {
+        calcExpression = "";
+        updateCalcDisplay("0");
+    }
+
+    function calculateResult() {
+        try {
+            var result = eval(calcExpression);
+            calcExpression = String(result);
+            updateCalcDisplay(calcExpression);
+        } catch (error) {
+            updateCalcDisplay("Error");
+            calcExpression = "";
+        }
+    }
+
+    calcButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            var value = button.getAttribute("data-value");
+
+            if (value === "C") {
+                clearCalculator();
+                return;
+            }
+
+            if (value === "=") {
+                calculateResult();
+                return;
+            }
+
+            if (calcDisplay && (calcDisplay.value === "0" || calcDisplay.value === "Error")) {
+                calcExpression = "";
+            }
+
+            calcExpression += value;
+            updateCalcDisplay(calcExpression);
+        });
+    });
+
+    clearCalculator();
+});

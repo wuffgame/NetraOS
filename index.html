@@ -13,6 +13,7 @@
             </div>
             <div class="dock">
                 <p class="bar-item dock-item" style="font-family: Impact, fantasy; font-weight: 100; letter-spacing: 1px;" id="welcomeopen">Welcome</p>
+                <p class="bar-item dock-item" style="font-family: Impact, fantasy; font-weight: 100; letter-spacing: 1px;" id="calculatoropen">Calculator</p>
             </div>
         </div>
         <div class="window" id="welcome">
@@ -32,6 +33,42 @@
             </div>
             <p class="window-text"><b>Where can you find me?</b></p>
             <a href="https://github.com/wuffgame"><img style="width: 32px; height: 32px" src="img/icons/github.png"></a>
+        </div>
+        <div class="window calculator-window" id="calculator" style="display: none;">
+            <div class="window-header" id="calculatorheader">
+                <span style="flex: 1"></span>
+                <span class="window-title">CALCULATOR</span>
+                <span style="flex: 1; display: flex; justify-content: flex-end;">
+                    <img class="closebut" id="calculatorclose" src="https://cdn-icons-png.magnific.com/256/14034/14034319.png?semt=ais_white_label"/>
+                </span>
+            </div>
+            <hr style="color: black; height: 2px; background-color: black">
+
+            <div class="calculator">
+                <input type="text" id="calcDisplay" class="calc-display" readonly value="0">
+
+                <div class="calc-grid">
+                    <button class="calc-btn" data-value="7">7</button>
+                    <button class="calc-btn" data-value="8">8</button>
+                    <button class="calc-btn" data-value="9">9</button>
+                    <button class="calc-btn" data-value="/">/</button>
+
+                    <button class="calc-btn" data-value="4">4</button>
+                    <button class="calc-btn" data-value="5">5</button>
+                    <button class="calc-btn" data-value="6">6</button>
+                    <button class="calc-btn" data-value="*">*</button>
+
+                    <button class="calc-btn" data-value="1">1</button>
+                    <button class="calc-btn" data-value="2">2</button>
+                    <button class="calc-btn" data-value="3">3</button>
+                    <button class="calc-btn" data-value="-">-</button>
+
+                    <button class="calc-btn" data-value="0">0</button>
+                    <button class="calc-btn" data-value="C">C</button>
+                    <button class="calc-btn" data-value="=">=</button>
+                    <button class="calc-btn" data-value="+">+</button>
+                </div>
+            </div>
         </div>
     </body>
 </html>
