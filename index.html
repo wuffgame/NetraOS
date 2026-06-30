@@ -14,6 +14,7 @@
             <div class="dock">
                 <p class="bar-item dock-item" style="font-family: Impact, fantasy; font-weight: 100; letter-spacing: 1px;" id="welcomeopen">Welcome</p>
                 <p class="bar-item dock-item" style="font-family: Impact, fantasy; font-weight: 100; letter-spacing: 1px;" id="calculatoropen">Calculator</p>
+                <p class="bar-item dock-item" style="font-family: Impact, fantasy; font-weight: 100; letter-spacing: 1px;" id="notesopen">Notes</p>
             </div>
         </div>
         <div class="window" id="welcome">
@@ -69,6 +70,19 @@
                     <button class="calc-btn" data-value="+">+</button>
                 </div>
             </div>
+        </div>
+        <div class="window notes-window" id="notes" style="display: none;">
+            <div class="window-header" id="notesheader">
+                <span style="flex: 1"></span>
+                <span class="window-title">NOTES</span>
+                <span style="flex: 1; display: flex; justify-content: flex-end;">
+            <img class="closebut" id="notesclose" src="https://cdn-icons-png.magnific.com/256/14034/14034319.png?semt=ais_white_label"/>
+        </span>
+            </div>
+
+            <hr style="color: black; height: 2px; background-color: black">
+
+            <textarea id="notesArea" class="notes-area" placeholder="Write your notes here..."></textarea>
         </div>
     </body>
 </html>

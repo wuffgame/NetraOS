@@ -168,3 +168,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
     clearCalculator();
 });
+
+var notesScreen = document.querySelector("#notes");
+var notesScreenClose = document.querySelector("#notesclose");
+var notesScreenOpen = document.querySelector("#notesopen");
+var notesArea = document.querySelector("#notesArea");
+
+if (notesScreen) {
+    initializeWindow("notes");
+}
+
+if (notesScreenClose && notesScreen) {
+    notesScreenClose.addEventListener("click", function () {
+        closeWindow(notesScreen);
+    });
+}
+
+if (notesScreenOpen && notesScreen) {
+    notesScreenOpen.addEventListener("click", function () {
+        openWindow(notesScreen);
+    });
+}
+if (notesArea) {
+    notesArea.value = localStorage.getItem("netraos-notes") || "";
+
+    notesArea.addEventListener("input", function () {
+        localStorage.setItem("netraos-notes", notesArea.value);
+    });
+}
